@@ -71,7 +71,6 @@ export default function gridListWithCTA() {
 
       if (value < 0) {
         alert("seems like there's a negative number, pls do not be naughty!");
-
         return;
       }
     }
@@ -85,6 +84,8 @@ export default function gridListWithCTA() {
         tractor * values.tractors +
         k * values.k +
         p * values.p;
+
+      output = Math.abs(output);
 
       alert(`Output: ${output}! Wow! That's a lot! As high as our DDW score!`);
     }
