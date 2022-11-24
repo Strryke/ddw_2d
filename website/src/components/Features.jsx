@@ -69,6 +69,11 @@ export default function gridListWithCTA() {
     for (const [key, value] of Object.entries(values)) {
       values[key] = parseFloat(value);
 
+      if (value == "") {
+        alert("something's not right, pls check your inputs");
+        return;
+      }
+
       if (value < 0) {
         alert("seems like there's a negative number, pls do not be naughty!");
         return;
@@ -103,14 +108,13 @@ export default function gridListWithCTA() {
         gap={{ base: "8", sm: "12", md: "16" }}
       >
         {features.map((feature) => (
-          <>
-            <Feature
-              heading={feature.id}
-              text={feature.text}
-              unit={feature.unit}
-              handler={handler}
-            />
-          </>
+          <Feature
+            key={feature.id}
+            heading={feature.id}
+            text={feature.text}
+            unit={feature.unit}
+            handler={handler}
+          />
         ))}
       </Grid>
 
